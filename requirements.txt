@@ -1,0 +1,7 @@
+selenium
+pandas
+bs4
+matplotlib
+numpy
+regex
+datetime
