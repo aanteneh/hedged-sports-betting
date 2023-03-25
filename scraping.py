@@ -15,5 +15,4 @@ except:
 
 soup = BeautifulSoup(page, 'html.parser')
 
-# storing relevant information, waiting on Tipico account
 
