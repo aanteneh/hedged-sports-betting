@@ -28,14 +28,6 @@ fdteamContent = fdSoup.find_all(
 fdoddsContent = fdSoup.find_all(
     'span', attrs={'class': 'im in ep ej iw ix fg'})
 
-print(fdteamContent)
-
-
-# initialize storage arrays
-dkTeams = []
-dkOdds = []
-fdTeams = []
-fdOdds = []
 
 # def convert_units(content):
 #     arr = []
@@ -62,5 +54,29 @@ def get_odds(content):
     return arr
 
 
+# initialize storage arrays
+dkTeams = []
+dkOdds = []
+fdTeams = []
+fdOdds = []
+
 dkTeams = get_names(dkteamContent)
 dkOdds = get_odds(dkoddsContent)
+fdTeams = get_names(fdteamContent)
+fdOdds = get_odds(fdoddsContent)
+
+
+def store_data(teams, odds):
+    arr = []
+    for i in range(len(teams), 2):
+        r = []
+        r.append(teams[i])
+        r.append(teams[i+1])
+        r.append(odds[i])
+        r.append(odds[i+1])
+        arr.append(r)
+    return pd.DataFrame(columns=['Team 1', 'Team 2', 'Team 1 Odds', 'Team 2 Odds'], data=arr)
+
+
+draftKingsdf = store_data(dkTeams, dkOdds)
+print(draftKingsdf)
