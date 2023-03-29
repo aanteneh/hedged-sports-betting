@@ -20,6 +20,10 @@ dkTeams = []
 dkOdds = []
 
 dkTeams = scraping.get_names(dkteamContent)
-dkOdds = scraping.get_odds(dkoddsContent)
+dkAmOdds = scraping.get_odds(dkoddsContent)
 
-draftKingsdf = scraping.store_data(dkTeams, dkOdds)
+dkOdds = scraping.convert_units(dkAmOdds)
+
+draftKingsDF = scraping.store_data(dkTeams, dkOdds)
+
+print(draftKingsDF)

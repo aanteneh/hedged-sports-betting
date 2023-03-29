@@ -1,19 +1,30 @@
 # Scraping Method general file
 
 import pandas as pd
+from re import match
 
 # for some reason have to follow this request convention
 hdr = {'User-Agent': 'Mozilla/5.0'}
 
 
-def convert_units(content):
-    arr = []
-    for i in range(len(content)):
-        if (int(content[i]) >= 0):
-            arr.append(int(content[i]) / (100+1))
-        else:
-            arr.append(1 - (100 / int(content[i])))
-    return arr
+def only_numerics(seq):
+    seq_type = type(seq)
+    return seq_type().join(filter(seq_type.isdigit, seq))
+
+
+def convert_units(odd):
+    res = []
+    for i in range(len(odd)):
+        print(only_numerics(odd[i]))
+
+        # if match(r'^-?[0-9]+$', odd[i]):
+        #     if (int(float(odd[i])) >= 0):
+        #         res.append(int(float(odd[i]))/100+1)
+        #     else:
+        #         res.append(1-(100/int(float(odd[i]))))
+        # else:
+        #     print("failed check")
+    return res
 
 
 def get_names(content):
@@ -33,7 +44,7 @@ def get_odds(content):
 
 def store_data(teams, odds):
     arr = []
-    for i in range(len(teams), 2):
+    for i in range(0, len(teams), 2):
         r = []
         r.append(teams[i])
         r.append(teams[i+1])
