@@ -1,9 +1,6 @@
 # Scraping Method general file
 
-import numpy as np
 import pandas as pd
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
 
 # for some reason have to follow this request convention
 hdr = {'User-Agent': 'Mozilla/5.0'}

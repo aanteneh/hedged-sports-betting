@@ -23,4 +23,3 @@ dkTeams = scraping.get_names(dkteamContent)
 dkOdds = scraping.get_odds(dkoddsContent)
 
 draftKingsdf = scraping.store_data(dkTeams, dkOdds)
-print(draftKingsdf)
