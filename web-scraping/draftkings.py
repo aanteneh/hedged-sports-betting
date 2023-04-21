@@ -25,5 +25,3 @@ dkAmOdds = scraping.get_odds(dkoddsContent)
 dkOdds = scraping.convert_units(dkAmOdds)
 
 draftKingsDF = scraping.store_data(dkTeams, dkOdds)
-
-print(draftKingsDF)

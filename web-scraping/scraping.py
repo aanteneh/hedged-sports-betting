@@ -14,16 +14,11 @@ def only_numerics(seq):
 
 def convert_units(odd):
     res = []
-    for i in range(len(odd)):
-        print(only_numerics(odd[i]))
-
-        # if match(r'^-?[0-9]+$', odd[i]):
-        #     if (int(float(odd[i])) >= 0):
-        #         res.append(int(float(odd[i]))/100+1)
-        #     else:
-        #         res.append(1-(100/int(float(odd[i]))))
-        # else:
-        #     print("failed check")
+    for k in range(len(odd)):
+        if (int(odd[k]) >= 0):
+            res.append(int(odd[k])/100+1)
+        else:
+            res.append(1-(100/int(odd[k])))
     return res
 
 
