@@ -20,6 +20,6 @@ agOdds = []
 agTeams = scraping.get_names(agTeamContent)
 agAmOdds = scraping.get_odds(agOddsContent)
 
-agOdds = scraping.convert_units(agAmOdds)
+# agOdds = scraping.convert_units(agAmOdds)
 
-agDf = scraping.store_data(agTeams, agOdds)
+agDf = scraping.store_data(agTeams, agAmOdds)

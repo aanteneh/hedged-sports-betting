@@ -6,6 +6,22 @@ from re import match
 # for some reason have to follow this request convention
 hdr = {'User-Agent': 'Mozilla/5.0'}
 
+abbrev_names = {'AtlantaHawks': 'ATL', 'ATLHawks': 'ATL', 'BostonCeltics': 'BOS', 'BOSCeltics': 'BOS',
+                'BrooklynNets': 'BKN', 'BKNNets': 'BKN', 'CharlotteHornets': 'CHA', 'CHAHornets': 'CHA',
+                'ChicagoBulls': 'CHI', 'CHIBulls': 'CHI', 'ClevelandCavaliers': 'CLE', 'CLECavaliers': 'CLE', 'DallasMavericks': 'DAL', 'DALMavericks': 'DAL',
+                'DenverNuggets': 'DEN', 'DENNuggets': 'DEN', 'DetroitPistons': 'DET', 'DETPistons': 'DET',
+                'GoldenStateWarriors': 'GSW', 'GSWWarriors': 'GSW', 'GSWarriors': 'GSW', 'HoustonRockets': 'HOU', 'HOURockets': 'HOU',
+                'IndianaPacers': 'IND', 'INDPacers': 'IND', 'LosAngelesClippers': 'LAC', 'LAClippers': 'LAC',
+                'LosAngelesLakers': 'LAL', 'LALakers': 'LAL', 'MemphisGrizzlies': 'MEM', 'MEMGrizzlies': 'MEM',
+                'MiamiHeat': 'MIA', 'MIAHeat': 'MIA', 'MilwaukeeBucks': 'MIL', 'MILBucks': 'MIL',
+                'MinnesotaTimberwolves': 'MIN', 'MINTimberwolves': 'MIN', 'NewOrleansPelicans': 'NOP',
+                'NOPelicans': 'NOP', 'NewYorkKnicks': 'NYK', 'NYKnicks': 'NYK', 'OklahomaCityThunder': 'OKC',
+                'OKCThunder': 'OKC', 'OrlandoMagic': 'ORL', 'ORLMagic': 'ORL', 'Philadelphia76ers': 'PHI',
+                'PHI76ers': 'PHI', 'PhoenixSuns': 'PHX', 'PHXSuns': 'PHX', 'PHOSuns': 'PHX', 'PortlandTrailBlazers': 'POR',
+                'PORTrailBlazers': 'POR', 'SacramentoKings': 'SAC', 'SACKings': 'SAC', 'SanAntonioSpurs': 'SAS',
+                'SASpurs': 'SAS', 'TorontoRaptors': 'TOR', 'TORRaptors': 'TOR', 'UtahJazz': 'UTA', 'UTJazz': 'UTA',
+                'WashingtonWizards': 'WAS', 'WASWizards': 'WAS'}
+
 
 def only_numerics(seq):
     seq_type = type(seq)
@@ -24,9 +40,9 @@ def convert_units(odd):
 
 def get_names(content):
     arr = []
-    for frame in content:
-        arr.append(frame.getText().replace(
-            '\n', '').replace('\t', '').replace(' ', ''))
+    for c in content:
+        arr.append(abbrev_names[c.getText().replace(
+            '\n', '').replace('\t', '').replace(' ', '')])
     return arr
 
 
