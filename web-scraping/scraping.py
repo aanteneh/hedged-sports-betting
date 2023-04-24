@@ -16,9 +16,9 @@ def convert_units(odd):
     res = []
     for k in range(len(odd)):
         if (int(odd[k]) >= 0):
-            res.append(int(odd[k])/100+1)
+            res.append(float(odd[k])/100+1)
         else:
-            res.append(1-(100/int(odd[k])))
+            res.append(1-(100/float(odd[k])))
     return res
 
 

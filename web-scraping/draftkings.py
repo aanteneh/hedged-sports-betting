@@ -15,13 +15,12 @@ dkteamContent = dkSoup.find_all(
 dkoddsContent = dkSoup.find_all(
     'span', attrs={'class': 'sportsbook-odds american no-margin default-color'})
 
-# initialize storage arrays
 dkTeams = []
 dkOdds = []
 
 dkTeams = scraping.get_names(dkteamContent)
 dkAmOdds = scraping.get_odds(dkoddsContent)
 
-dkOdds = scraping.convert_units(dkAmOdds)
+# dkOdds = scraping.convert_units(dkAmOdds)
 
-draftKingsDF = scraping.store_data(dkTeams, dkOdds)
+draftKingsDF = scraping.store_data(dkTeams, dkAmOdds)
