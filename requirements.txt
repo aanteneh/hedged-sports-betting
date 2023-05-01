@@ -8,3 +8,4 @@ datetime
 xlsxwriter
 openpyxl
 requests
+sportmonks
