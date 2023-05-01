@@ -24,3 +24,4 @@ dkAmOdds = scraping.get_odds(dkoddsContent)
 # dkOdds = scraping.convert_units(dkAmOdds)
 
 dkDf = scraping.store_data(dkTeams, dkAmOdds)
+print(dkDf)

@@ -23,3 +23,4 @@ agAmOdds = scraping.get_odds(agOddsContent)
 # agOdds = scraping.convert_units(agAmOdds)
 
 agDf = scraping.store_data(agTeams, agAmOdds)
+print(agDf)
